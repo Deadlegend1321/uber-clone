@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:uber_clone/screens/registeration_screen.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String screenName = "login";
+
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -55,6 +58,9 @@ class LoginScreen extends StatelessWidget {
                         fontSize: 14
                       ),
                     ),
+                    const SizedBox(
+                      height: 50,
+                    ),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -72,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 1,
+                      height: 100,
                     ),
                     ElevatedButton(
                         onPressed: (){
@@ -95,7 +101,7 @@ class LoginScreen extends StatelessWidget {
               ),
               TextButton(
                   onPressed: (){
-
+                    Navigator.pushNamedAndRemoveUntil(context, RegisterationScreen.screenName, (route) => false);
                   },
                   child: Text(
                     'Do not have an Account? Register Here.'
